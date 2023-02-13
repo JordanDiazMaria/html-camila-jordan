@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const cardsAdj = [
+  const cardAdj = [
     {
       name: "img1",
       imagenes: "imagenes/img1.jpg"
@@ -49,4 +49,21 @@ document.addEventListener("DOMContentLoaded", () => {
       imagenes: "imagenes/img6.jpg"
     }
   ];
+});
+
+
+  const cuadricula = document.querySelector(".cuadricula");
+  const resultado = document.querySelector("#resultado");
+  var cartasEscogidas = [];
+  var cartasGanadas = [];
+  ///____________________________
+  function crearTablero() {
+    for (let i = 0; i < cardAdj.length; i++) {
+      var carta = document.createElement("img");
+      carta.setAttribute("src", "images/reverso.png");
+      carta.setAttribute("data-id", i);
+      carta.addEventListener("click", VoltearCarta);
+      cuadricula.appendChild(carta);
+    }
+  }
 });
